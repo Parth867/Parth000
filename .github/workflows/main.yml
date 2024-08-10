@@ -1,8 +1,20 @@
 name: CI
+
+
+
 on: [push, workflow_dispatch]
+
+
+
 jobs:
+
+
   build:
+
+
+
     runs-on: windows-latest
+
 
 
     steps:
@@ -11,8 +23,10 @@ jobs:
     - name: Download
 
 
-      run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngr ok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
-    - name: Extract
+      run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
+
+
+    - name: Extract
 
 
       run: Expand-Archive ngrok.zip
@@ -49,4 +63,6 @@ jobs:
 
 
       run: .\ngrok\ngrok.exe tcp 3389
+
+
 
